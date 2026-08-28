@@ -1,0 +1,1019 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap");
+
+@import "tailwindcss";
+
+/* =========================================================
+   VKART — GLOBAL
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+
+  background: #f6f6f3;
+  color: #171717;
+
+  font-family: "DM Sans", sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+
+/* =========================================================
+   APP LAYOUT
+   ========================================================= */
+
+.app-layout {
+  width: 100%;
+  min-height: 100vh;
+
+  background: #f6f6f3;
+}
+
+
+/* =========================================================
+   APP BODY
+   ========================================================= */
+
+.app-body {
+  width: 100%;
+  min-height: calc(100vh - 72px);
+}
+
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+.vkart-navbar {
+  position: sticky;
+  top: 0;
+
+  z-index: 1000;
+
+  width: 100%;
+  height: 72px;
+
+  background: rgba(246, 246, 243, 0.96);
+
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.vkart-navbar-inner {
+  width: 100%;
+  max-width: 1440px;
+  height: 100%;
+
+  margin: 0 auto;
+  padding: 0 32px;
+
+  display: flex;
+  align-items: center;
+}
+
+
+/* =========================================================
+   MENU BUTTON
+   ========================================================= */
+
+.vkart-menu-button {
+  width: 40px;
+  height: 40px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-right: 12px;
+  padding: 0;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: transparent;
+  color: #171717;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.vkart-menu-button:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.vkart-menu-button:active {
+  transform: scale(0.92);
+}
+
+.vkart-menu-button:focus-visible {
+  outline: 2px solid rgba(79, 70, 229, 0.35);
+  outline-offset: 2px;
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.vkart-logo {
+  flex-shrink: 0;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 25px;
+  line-height: 1;
+
+  font-weight: 800;
+
+  letter-spacing: -0.06em;
+}
+
+.vkart-logo-dot {
+  color: #4f46e5;
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.vkart-navigation {
+  display: flex;
+  align-items: center;
+
+  gap: 30px;
+
+  margin-left: 52px;
+}
+
+.vkart-navigation a,
+.vkart-navigation button {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 5px;
+
+  padding: 8px 0;
+
+  border: 0;
+  background: transparent;
+
+  color: rgba(23, 23, 23, 0.48);
+
+  font-size: 14px;
+  font-weight: 600;
+
+  white-space: nowrap;
+
+  transition: color 0.2s ease;
+}
+
+.vkart-navigation a:hover,
+.vkart-navigation button:hover {
+  color: #171717;
+}
+
+.vkart-navigation a.active {
+  color: #171717;
+}
+
+.vkart-navigation a.active::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 2px;
+
+  border-radius: 999px;
+
+  background: #4f46e5;
+}
+
+
+/* =========================================================
+   NAVBAR ACTIONS
+   ========================================================= */
+
+.vkart-actions {
+  margin-left: auto;
+
+  display: flex;
+  align-items: center;
+
+  gap: 3px;
+}
+
+.vkart-action {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: transparent;
+  color: #171717;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.vkart-action:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.vkart-action:active {
+  transform: scale(0.94);
+}
+
+
+/* =========================================================
+   CART
+   ========================================================= */
+
+.vkart-cart {
+  position: relative;
+}
+
+.vkart-cart-badge {
+  position: absolute;
+
+  top: 3px;
+  right: 3px;
+
+  min-width: 15px;
+  height: 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 4px;
+
+  border-radius: 999px;
+
+  background: #4f46e5;
+  color: #ffffff;
+
+  font-size: 8px;
+  line-height: 1;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.vkart-sidebar {
+  position: fixed;
+
+  top: 72px;
+  left: 0;
+  bottom: 0;
+
+  z-index: 900;
+
+  width: 250px;
+
+  padding: 25px 16px;
+
+  overflow-y: auto;
+
+  background: rgba(246, 246, 243, 0.98);
+
+  border-right: 1px solid rgba(0, 0, 0, 0.07);
+
+  transform: translateX(-100%);
+
+  transition:
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  box-shadow: 12px 0 40px rgba(0, 0, 0, 0.03);
+}
+
+
+/* Sidebar open */
+
+.vkart-sidebar.open {
+  transform: translateX(0);
+}
+
+
+/* Desktop - always visible */
+
+@media (min-width: 1025px) {
+  .vkart-sidebar {
+    transform: translateX(0);
+  }
+}
+
+
+/* Sidebar scrollbar */
+
+.vkart-sidebar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.vkart-sidebar::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.12);
+  border-radius: 999px;
+}
+
+
+/* =========================================================
+   SIDEBAR HEADER
+   ========================================================= */
+
+.vkart-sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 22px;
+
+  padding: 0 6px;
+}
+
+.vkart-sidebar-eyebrow {
+  margin: 0;
+
+  color: #4f46e5;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 0.16em;
+}
+
+.vkart-sidebar-title {
+  margin: 3px 0 0;
+
+  font-family: "Manrope", sans-serif;
+
+  color: #171717;
+
+  font-size: 21px;
+  line-height: 1.1;
+  font-weight: 800;
+
+  letter-spacing: -0.04em;
+}
+
+.vkart-sidebar-close {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: transparent;
+  color: #171717;
+}
+
+.vkart-sidebar-close:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+
+/* =========================================================
+   SIDEBAR NAVIGATION
+   ========================================================= */
+
+.vkart-sidebar-nav {
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.vkart-sidebar-link {
+  position: relative;
+
+  width: 100%;
+  min-height: 46px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 0 13px;
+
+  border-radius: 13px;
+
+  color: rgba(23, 23, 23, 0.52);
+
+  font-size: 13.5px;
+  font-weight: 600;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.vkart-sidebar-link:hover {
+  background: rgba(0, 0, 0, 0.045);
+
+  color: #171717;
+
+  transform: translateX(2px);
+}
+
+.vkart-sidebar-link.active {
+  background: #4f46e5;
+
+  color: #ffffff;
+
+  box-shadow:
+    0 8px 20px rgba(79, 70, 229, 0.18);
+}
+
+.vkart-sidebar-link.active:hover {
+  background: #4338ca;
+
+  color: #ffffff;
+
+  transform: translateX(0);
+}
+
+
+/* =========================================================
+   SIDEBAR ICONS
+   ========================================================= */
+
+.vkart-sidebar-icon {
+  width: 32px;
+  height: 32px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+}
+
+.vkart-sidebar-link:not(.active)
+  .vkart-sidebar-icon {
+  background: rgba(0, 0, 0, 0.035);
+}
+
+.vkart-sidebar-link.active
+  .vkart-sidebar-icon {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.vkart-sidebar-label {
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   SIDEBAR DIVIDER
+   ========================================================= */
+
+.vkart-sidebar-divider {
+  width: 100%;
+  height: 1px;
+
+  margin: 20px 0;
+
+  background: rgba(0, 0, 0, 0.07);
+}
+
+
+/* =========================================================
+   SIDEBAR BOTTOM CARD
+   ========================================================= */
+
+.vkart-sidebar-bottom {
+  margin-top: 22px;
+
+  padding: 17px;
+
+  border: 1px solid rgba(0, 0, 0, 0.06);
+
+  border-radius: 17px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.045);
+}
+
+.vkart-sidebar-bottom-logo {
+  font-family: "Manrope", sans-serif;
+
+  font-size: 17px;
+  font-weight: 800;
+
+  letter-spacing: -0.05em;
+}
+
+.vkart-sidebar-bottom-logo span {
+  color: #4f46e5;
+}
+
+.vkart-sidebar-bottom p {
+  margin: 5px 0 13px;
+
+  color: rgba(23, 23, 23, 0.42);
+
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.vkart-sidebar-shop-link {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 8px 11px;
+
+  border-radius: 9px;
+
+  background: #f1f0ff;
+
+  color: #4f46e5;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.vkart-sidebar-shop-link:hover {
+  background: #4f46e5;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   SIDEBAR OVERLAY
+   ========================================================= */
+
+.vkart-sidebar-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 850;
+
+  background: rgba(0, 0, 0, 0.28);
+
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
+
+.main-content {
+  width: 100%;
+  min-height: calc(100vh - 72px);
+
+  background: #f6f6f3;
+
+  margin-left: 250px;
+
+  padding: 32px;
+
+  transition:
+    margin-left 0.3s ease;
+}
+
+
+/* =========================================================
+   PAGE CONTAINER
+   ========================================================= */
+
+.vkart-page {
+  width: 100%;
+  max-width: 1440px;
+
+  margin: 0 auto;
+
+  padding-left: 0;
+  padding-right: 0;
+}
+
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
+
+.vkart-search {
+  width: 100%;
+  max-width: 420px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 0 15px;
+
+  border: 1px solid rgba(0, 0, 0, 0.08);
+
+  border-radius: 12px;
+
+  background: #ffffff;
+}
+
+.vkart-search:focus-within {
+  border-color: rgba(79, 70, 229, 0.35);
+
+  box-shadow:
+    0 0 0 3px rgba(79, 70, 229, 0.08);
+}
+
+.vkart-search input {
+  width: 100%;
+
+  border: 0;
+
+  outline: 0;
+
+  background: transparent;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   CARDS
+   ========================================================= */
+
+.vkart-card {
+  border: 1px solid rgba(0, 0, 0, 0.06);
+
+  border-radius: 18px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.04);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.vkart-card:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 16px 40px rgba(0, 0, 0, 0.07);
+}
+
+
+/* =========================================================
+   PRODUCT GRID
+   ========================================================= */
+
+.vkart-product-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 24px;
+
+  width: 100%;
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+   ========================================================= */
+
+.mobile-menu-button {
+  display: none;
+}
+
+.vkart-mobile-toggle {
+  display: none;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1024px) {
+
+  .vkart-navbar-inner {
+    padding: 0 24px;
+  }
+
+  .vkart-navigation {
+    display: none;
+  }
+
+  /* Sidebar becomes mobile drawer */
+
+  .vkart-sidebar {
+    width: 280px;
+
+    top: 72px;
+
+    transform: translateX(-100%);
+  }
+
+  .vkart-sidebar.open {
+    transform: translateX(0);
+  }
+
+  /* Main content uses full width */
+
+  .main-content {
+    margin-left: 0;
+
+    padding: 24px;
+  }
+
+  .vkart-page {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .vkart-product-grid {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+
+    gap: 20px;
+  }
+
+  .mobile-menu-button {
+    display: flex;
+  }
+
+  .vkart-mobile-toggle {
+    display: flex;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  .vkart-navbar {
+    height: 68px;
+  }
+
+  .vkart-navbar-inner {
+    padding: 0 18px;
+  }
+
+  .vkart-menu-button {
+    width: 38px;
+    height: 38px;
+
+    margin-right: 8px;
+  }
+
+  .vkart-logo {
+    font-size: 23px;
+  }
+
+  .main-content {
+    min-height: calc(100vh - 68px);
+
+    padding: 18px;
+  }
+
+  .vkart-sidebar {
+    top: 68px;
+
+    width: 280px;
+  }
+
+  .vkart-product-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 14px;
+  }
+
+  .vkart-action {
+    width: 37px;
+    height: 37px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .vkart-navbar-inner {
+    padding: 0 14px;
+  }
+
+  .vkart-menu-button {
+    width: 36px;
+    height: 36px;
+
+    margin-right: 6px;
+  }
+
+  .vkart-logo {
+    font-size: 21px;
+  }
+
+  .main-content {
+    padding: 14px;
+  }
+
+  .vkart-product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .vkart-action {
+    width: 35px;
+    height: 35px;
+  }
+
+  .vkart-sidebar {
+    width: 285px;
+  }
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.16);
+
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================================
+   SELECTION
+   ========================================================= */
+
+::selection {
+  background: rgba(79, 70, 229, 0.18);
+
+  color: #171717;
+}
+
+
+/* =========================================================
+   VKART AUTH USER
+   ========================================================= */
+
+.vkart-user-area {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.vkart-user-button {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  text-decoration: none;
+
+  color: inherit;
+}
+
+.vkart-user-avatar {
+  width: 32px;
+  height: 32px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #111111;
+
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.vkart-user-name {
+  max-width: 100px;
+
+  overflow: hidden;
+
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.vkart-logout-button {
+  border: none;
+
+  background: transparent;
+
+  padding: 7px 10px;
+
+  border-radius: 8px;
+
+  font-family: inherit;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.vkart-logout-button:hover {
+  background: #f1f1f1;
+}
