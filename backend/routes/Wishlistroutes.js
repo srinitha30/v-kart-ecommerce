@@ -4,7 +4,7 @@ const {
   addToWishlist,
   getWishlist,
   removeFromWishlist,
-} = require("../controllers/Wishlistcontrollers");
+} = require("../controllers/wishlistControllers");
 
 const protect = require("../middleware/authmiddleware");
 
