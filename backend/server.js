@@ -46,7 +46,7 @@ ROUTES
 const authRoutes = require("./routes/authRoutes");
 const orderRoutes = require("./routes/orderRoutes");
 const wishlistRoutes = require("./routes/Wishlistroutes");
-const productRoutes = require("./routes/productRoutes");
+const productRoutes = require("./routes/productroutes");
 
 /*
 =========================================================
