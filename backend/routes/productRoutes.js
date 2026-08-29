@@ -5,7 +5,7 @@ const {
   createProduct,
   getProducts,
   getProductBySlug,
-} = require("../controllers/productController");
+} = require("../controllers/productcontroller");
 
 const Product = require("../models/Product");
 
